@@ -60,7 +60,7 @@ export function usePhotoGallery() {
     photo: Photo,
     fileName: string
   ): Promise<UserPhoto> => {
-    let base64Data: string;
+    let base64Data: string | Blob;
     if (isPlatform("hybrid")) {
       const file = await Filesystem.readFile({
         path: photo.path!,
